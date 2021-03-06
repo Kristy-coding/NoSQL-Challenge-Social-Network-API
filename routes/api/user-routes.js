@@ -7,9 +7,8 @@ const {
     createUser,
     updateUser,
     deleteUser,
-    addFriend
-    //,addFriend,
-    //deleteFriend
+    addFriend,
+    deleteFriend
   } = require('../../constrollers/user-controller');
 
 //Before we import the controller methods, let's dissect this new Express.js Router setup. Instead of creating duplicate routes for the individual HTTP methods, we can combine them!
@@ -42,11 +41,13 @@ router
 
 
 
-//api/users/:userId/friends/:friendId-------------------------//
-// router
-//   .route('/:userId/friends/:friendId')
-//   .post(addFriend)
-//   .delete(deleteFriend)
+// //api/users/:userId/friends/:friendId-------------------------//
+//  router
+//    .route('/:userId/friends/:friendId')
+//    .post(addFriend)
+//    .delete(deleteFriend)
+
+
 
 module.exports = router;
 //We've already set up the export for this Router instance here, so all we have to do now is get the routes hooked into the entire server via index files

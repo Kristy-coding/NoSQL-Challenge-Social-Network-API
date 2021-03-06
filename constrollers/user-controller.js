@@ -83,33 +83,52 @@ const userController = {
         
     },
 
-    //api/users/:userId/friends/:friendId-------------------------//
 
-    // POST to add a friend to a user's friend list
-    addFriend(){
+    // api/users/:userId/friends/:friendId
+    //api/users/:userId/friends/add/:friendId-------------------------//
 
-    },
+    // // POST to add a friend to a user's friend list
+    // addFriend({params, body}, res){
+    //     User.findOneAndUpdate(
+    //         //where
+    //         { _id: params.userId },
+    //         // what are we updating
+    //         { $push: { friends: params.friendId}},
+    //         // return updated document
+    //         // and run validators on updated document
+    //         { new: true, runValidators: true })
+    //         .then(dbUserData => {
+    //             if(!dbUserData){
+    //                 res.status(404).json({message: 'No User found with that id'});
+    //                 return;
+    //             }
+    //             res.json(dbUserData);
+    //         })
+    //         .catch( err=> res.json(err));
 
-    // addReply({ params, body }, res) {
-    //     Comment.findOneAndUpdate(
-    //       { _id: params.commentId },
-    //       { $push: { replies: body } },
-    //       { new: true, runValidators: true }
-    //     )
-    //       .then(dbPizzaData => {
-    //         if (!dbPizzaData) {
-    //           res.status(404).json({ message: 'No pizza found with this id!' });
-    //           return;
-    //         }
-    //         res.json(dbPizzaData);
-    //       })
-    //       .catch(err => res.json(err));
-    //   }
+    // },
 
-    // DELETE to remove a friend from a user's friend list
-    deleteFriend(){
+    // // DELETE to remove a friend from a user's friend list
+    //  //api/users/:userId/friends/remove/:friendId-------------------------//
+    // deleteFriend({params, body}, res){
+    //     User.findOneAndUpdate(
+    //         //where
+    //         { _id: params.userId },
+    //         // what are we updating
+    //         { $pull: { friends: params.friendId}},
+    //         // return updated document
+    //         // and run validators on updated document
+    //         { new: true})
+    //         .then(dbUserData => {
+    //             if(!dbUserData){
+    //                 res.status(404).json({message: 'No User found with that id'});
+    //                 return;
+    //             }
+    //             res.json(dbUserData);
+    //         })
+    //         .catch( err=> res.json(err));
 
-    }
+    // }
 
 }
 
