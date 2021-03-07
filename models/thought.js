@@ -53,7 +53,7 @@ const ThoughtSchema = new Schema({
     //subdocument 
     reactions: [ReactionSchema]
 
-},{toJSON: {virtuals: true, getters: true}})
+},{toJSON: {virtuals: true, getters: true},id: false})
 
 //Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
 
