@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 
+const { Thought } = require('./index');
+
 //const dateFormat = require('../utils/dateFormat');
 
 const UserSchema = new Schema({
@@ -34,8 +36,19 @@ const UserSchema = new Schema({
     ]
 },{toJSON: {virtuals: true},id:false})
 
-//Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
 
+UserSchema.post('findOneAndDelete', function(doc){
+    // befor a user gets deleted
+    
+        const userThoughtArr = doc.thoughts
+        console.log(userThoughtArr);
+
+        Thought.deleteMany({ _id:'604526ce7716f859f818b757'})
+            // .then(dbThoughtData => {console.log(dbThoughtData)})
+            // .catch(err=> {console.log(err)})
+    // find and delete all userThoughts in the array
+})
+//Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
 UserSchema.virtual('friendCount').get(function(){
     return this.friends.length
 });

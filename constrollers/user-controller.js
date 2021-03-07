@@ -115,7 +115,7 @@ const userController = {
             //where
             { _id: params.userId },
             // what are we updating
-            { $pull: { friends: {friendId: params.friendId}}},
+            { $pull: { friends: params.friendId}},
             // return updated document
             // and run validators on updated document
             { new: true})
